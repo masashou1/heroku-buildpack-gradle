@@ -4,4 +4,4 @@
 # fail fast
 set -e
 
-cd ${1} && ./gradlew --gradle-user-home "$1/.gradle" --no-daemon test
+cd ${1} && ./gradlew --gradle-user-home "$1/.gradle" --no-daemon test -i
