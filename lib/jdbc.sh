@@ -10,6 +10,7 @@ echo "set_jdbc_url 3"
 echo "set_jdbc_url 3-1"
       local db_protocol
 echo "set_jdbc_url 3-2"
+echo "set_jdbc_url 3-2 $db_url"
       db_protocol=$(expr "$db_url" : "\(.\+\)://")
 echo "set_jdbc_url 3-3"
       if [ "$db_protocol" = "postgres" ]; then
