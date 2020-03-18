@@ -82,6 +82,7 @@ echo "set_jdbc_url 4"
 }
 echo "set_jdbc_url end"
 echo "jdbc.sh 1"
+echo "$DATABASE_URL"
 if [ -n "${DATABASE_URL:-}" ]; then
   echo "jdbc.sh 1-1"
   set_jdbc_url "$DATABASE_URL"
