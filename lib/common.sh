@@ -90,8 +90,11 @@ cache_copy() {
 }
 
 install_jdk() {
+  echo "common.sh install_jdk() start"
   local install_dir=${1:?}
   local cache_dir=${2:?}
+
+  echo "common.sh install_jdk() 1"
 
   let start=$(nowms)
   JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz}
@@ -102,7 +105,10 @@ install_jdk() {
   source /tmp/jvm-common/opt/jdbc.sh
   mtime "jvm-common.install.time" "${start}"
 
+  echo "common.sh install_jdk() 2"
+
   let start=$(nowms)
   install_java_with_overlay "${install_dir}" "${cache_dir}"
   mtime "jvm.install.time" "${start}"
+  echo "common.sh install_jdk() end"
 }

@@ -30,6 +30,7 @@ elif is_spring_boot $BUILD_DIR; then
     echo "-----> Spring Boot and Webapp Runner detected"
     mcount "task.webapprunner"
   else
+    echo "-------------aaa-----------"
     echo "-----> Spring Boot detected"
     mcount "task.spring"
   fi
@@ -45,6 +46,8 @@ fi
 if [ -z "$GRADLE_TASK" ]; then
   GRADLE_TASK="${DEFAULT_GRADLE_TASK}"
 fi
+
+echo "compile install_jdk"
 
 install_jdk "${BUILD_DIR}" "${CACHE_DIR}"
 
