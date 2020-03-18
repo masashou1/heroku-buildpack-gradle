@@ -110,8 +110,8 @@ install_jdk() {
   echo "common.sh install_jdk() 1-6"
   echo "common.sh install_jdk() 1-6-1"
   # source /tmp/jvm-common/opt/jdbc.sh
-  ls -la ./
-  source ./jdbc.sh
+  ls -la ./lib
+  source ./lib/jdbc.sh
   echo "common.sh install_jdk() 1-6-2"
   echo "common.sh install_jdk() 1-7"
   mtime "jvm-common.install.time" "${start}"
