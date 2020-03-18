@@ -6,6 +6,8 @@ echo "set_jdbc_url 1"
 echo "set_jdbc_url 2"
   local env_prefix=${2:-"JDBC_DATABASE"}
 echo "set_jdbc_url 3"
+echo "env_prefix ${env_prefix}"
+echo "$(eval echo "\${${env_prefix}_URL:-}")"
   if [ -z "$(eval echo "\${${env_prefix}_URL:-}")" ]; then
 echo "set_jdbc_url 3-1"
       local db_protocol
