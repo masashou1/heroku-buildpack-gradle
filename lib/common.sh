@@ -97,12 +97,19 @@ install_jdk() {
   echo "common.sh install_jdk() 1"
 
   let start=$(nowms)
+  echo "common.sh install_jdk() 1-1"
   JVM_COMMON_BUILDPACK=${JVM_COMMON_BUILDPACK:-https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku/jvm.tgz}
+  echo "common.sh install_jdk() 1-2"
   mkdir -p /tmp/jvm-common
+  echo "common.sh install_jdk() 1-3"
   curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common --strip-components=1
+  echo "common.sh install_jdk() 1-4"
   source /tmp/jvm-common/bin/util
+  echo "common.sh install_jdk() 1-5"
   source /tmp/jvm-common/bin/java
+  echo "common.sh install_jdk() 1-6"
   source /tmp/jvm-common/opt/jdbc.sh
+  echo "common.sh install_jdk() 1-7"
   mtime "jvm-common.install.time" "${start}"
 
   echo "common.sh install_jdk() 2"
