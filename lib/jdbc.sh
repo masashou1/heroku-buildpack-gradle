@@ -110,6 +110,7 @@ if [ "${DISABLE_SPRING_DATASOURCE_URL:-}" != "true" ] &&
 fi
 echo "jdbc.sh 3"
 for dbUrlVar in $(env | awk -F "=" '{print $1}' | grep "HEROKU_POSTGRESQL_.*_URL"); do
+  echo "$dbUrlVar"
   set_jdbc_url "$(eval echo "\$${dbUrlVar}")" "${dbUrlVar//_URL/}_JDBC"
 done
 echo "jdbc.sh 4"
